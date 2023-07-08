@@ -145,7 +145,8 @@ if uploaded_file is not None:
    #wb.close()
 
    temp = tempfile.TemporaryFile()
-   wb.save(temp.name)
+   #wb.save(temp.name)
+   wb.save("myfile") 
    wb.close()
    data = BytesIO(temp.read())
    file_name_download = uploaded_file.name.replace(".xlsx", "_SSF.xlsx")
