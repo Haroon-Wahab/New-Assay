@@ -146,6 +146,7 @@ if uploaded_file is not None:
 
    temp = tempfile.TemporaryFile()
    wb.save(temp.name)
+   wb.close()
    data = BytesIO(temp.read())
    file_name_download = uploaded_file.name.replace(".xlsx", "_SSF.xlsx")
    st.download_button("Download the Processed File", data = data, mime='xlsx', file_name = file_name_download)
