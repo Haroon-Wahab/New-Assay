@@ -144,7 +144,7 @@ if uploaded_file is not None:
    sh['K130'] = df_test3.iloc[4]['SSF']
    wb.close()
 
-   temp = tempfile.TemporaryFile()
+   temp = tempfile.TemporaryFile(delete = False)
    wb.save(temp.name)
    data = BytesIO(temp.read())
    file_name_download = uploaded_file.name.replace(".xlsx", "_SSF.xlsx")
