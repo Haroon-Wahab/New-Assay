@@ -142,7 +142,7 @@ if uploaded_file is not None:
    sh['K122'] = df_test3.iloc[2]['SSF']
    sh['K126'] = df_test3.iloc[3]['SSF']
    sh['K130'] = df_test3.iloc[4]['SSF']
-   wb.close()
+   #wb.close()
 
    temp = tempfile.TemporaryFile()
    wb.save(temp.name)
