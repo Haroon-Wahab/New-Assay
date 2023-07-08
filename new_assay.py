@@ -12,7 +12,7 @@ import numpy as np
 import math
 from io import BytesIO
 import tempfile
-
+import openpyxl
 
 st.title("New Assay Computations Portal")
 uploaded_file = st.file_uploader("Please upload excel file")
@@ -61,9 +61,9 @@ if uploaded_file is not None:
    df_test2 = compute_indv(df3, df5, file_name)
    df_test3 = compute_indv(df4, df5, file_name)
 
-   from openpyxl import load_workbook
+  
 
-   wb = load_workbook(uploaded_file)
+   wb = openpyxl.load_workbook(uploaded_file)
 
    sh = wb['Sheet2']
 
