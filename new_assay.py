@@ -144,10 +144,13 @@ if uploaded_file is not None:
    sh['K130'] = df_test3.iloc[4]['SSF']
    #wb.close()
 
-   temp = tempfile.TemporaryFile()
-   wb.save(temp.name)
+   #temp = tempfile.TemporaryFile()
+   data = BytesIO()
+   wb.save(data)
+   data.seek(0)
+   #wb.save(temp.name)
    wb.close()
-   data = BytesIO(temp.read())
+   #data = BytesIO(temp.read())
    file_name_download = uploaded_file.name.replace(".xlsx", "_SSF.xlsx")
    st.download_button("Download the Processed File", data = data, mime='xlsx', file_name = file_name_download)
     
